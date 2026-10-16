@@ -1,0 +1,33 @@
+# zedqa runtime artifacts
+.qa-runs/
+.zedqa-cache/
+
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+
+# test / coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+junit*.xml
+allure-results/
+allure-report/
+
+# tools
+.ruff_cache/
+.mypy_cache/
+
+# zedqa install backups
+*.zedqa-backup
+
+# zed local runtime (generated)
+# (keep .zed/tasks.json and .zed/debug.json tracked in user projects;
+#  demo project's generated files are tracked intentionally)
