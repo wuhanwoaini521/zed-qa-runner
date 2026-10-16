@@ -1,0 +1,46 @@
+[
+  {
+    "label": "zedqa: Test Explorer (TUI)",
+    "command": "zedqa ui",
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false,
+    "reveal": "always"
+  },
+  {
+    "label": "zedqa: Run current test file",
+    "command": "zedqa run --file $ZED_RELATIVE_FILE",
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "reveal": "always"
+  },
+  {
+    "label": "zedqa: Run current test symbol",
+    "command": "zedqa run --nodeid $ZED_RELATIVE_FILE::$ZED_SYMBOL",
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "reveal": "always"
+  },
+  {
+    "label": "zedqa: Rerun failed (latest run)",
+    "command": "zedqa rerun --latest",
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "reveal": "always"
+  },
+  {
+    "label": "zedqa: Open Allure report (latest run)",
+    "command": "zedqa report --latest --open",
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "reveal": "always"
+  },
+  {
+    "label": "zedqa: Discover tests",
+    "command": "zedqa discover",
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "reveal": "always"
+  },
+  {
+    "label": "zedqa: Doctor",
+    "command": "zedqa doctor",
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "reveal": "always"
+  }
+]

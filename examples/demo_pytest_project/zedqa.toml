@@ -1,0 +1,41 @@
+# Zed QA Runner project config for the demo project.
+# Credentials are intentionally absent: real values stay in the project's env.
+
+version = 1
+
+[scheduling]
+default_workers = 4
+default_strategy = "resource"
+include_class_in_resource_mode = true
+
+[resources]
+lock_dir = ".qa-runs/.locks"
+lock_timeout = 30.0
+stale_after = 600.0
+
+# TestLogin and TestCart share account A -> must never run in parallel.
+[[resources.rules]]
+match = "tests/test_login.py::TestLogin"
+resources = ["account:A", "region:JP"]
+
+[[resources.rules]]
+match = "tests/test_cart.py::TestCart"
+resources = ["account:A", "region:JP"]
+
+# TestSearch and TestCheckout use different accounts but the same region US ->
+# a transitive conflict that still merges them into one serial group.
+[[resources.rules]]
+match = "tests/test_search.py::TestSearch"
+resources = ["account:B", "region:US"]
+
+[[resources.rules]]
+match = "tests/test_checkout.py::TestCheckout"
+resources = ["account:C", "region:US"]
+
+[browser]
+browser = "chromium"
+headless = true
+
+[reporting]
+runs_dir = ".qa-runs"
+open_report = false
