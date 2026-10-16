@@ -1,0 +1,78 @@
+[
+  {
+    "adapter": "Debugpy",
+    "request": "launch",
+    "module": "pytest",
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "justMyCode": false,
+    "python": "python",
+    "label": "zedqa: Debug current test file",
+    "args": [
+      "$ZED_RELATIVE_FILE",
+      "-n0",
+      "-p",
+      "no:rerunfailures",
+      "-s",
+      "--no-header",
+      "-vv"
+    ]
+  },
+  {
+    "adapter": "Debugpy",
+    "request": "launch",
+    "module": "pytest",
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "justMyCode": false,
+    "python": "python",
+    "label": "zedqa: Debug current test symbol",
+    "args": [
+      "$ZED_RELATIVE_FILE::$ZED_SYMBOL",
+      "-n0",
+      "-p",
+      "no:rerunfailures",
+      "-s",
+      "--no-header",
+      "-vv"
+    ]
+  },
+  {
+    "adapter": "Debugpy",
+    "request": "launch",
+    "module": "pytest",
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "justMyCode": false,
+    "python": "python",
+    "label": "zedqa: Debug last failed tests (--lf)",
+    "args": [
+      "--lf",
+      "-n0",
+      "-p",
+      "no:rerunfailures",
+      "-s",
+      "--no-header",
+      "-vv"
+    ]
+  },
+  {
+    "adapter": "Debugpy",
+    "request": "launch",
+    "module": "pytest",
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "justMyCode": false,
+    "python": "python",
+    "label": "zedqa: Debug Playwright (headed, PWDEBUG)",
+    "args": [
+      "--lf",
+      "--headed",
+      "-n0",
+      "-p",
+      "no:rerunfailures",
+      "-s",
+      "--no-header",
+      "-vv"
+    ],
+    "env": {
+      "PWDEBUG": "1"
+    }
+  }
+]
