@@ -10,7 +10,7 @@ All results below come from a run **after** the last code change.
 ## Automated test results
 
 ```
-71 passed, 0 failed, 0 errors, 0 skipped in 130.27s
+71 passed, 0 failed, 0 errors, 0 skipped in 120.23s
 ```
 
 `tests/unit` (38), `tests/integration` (28, real pytest subprocesses incl. real
